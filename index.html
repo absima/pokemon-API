@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1></h1>
+  <ul>
+    <li class=id></li>
+    <li class=name></li>
+    <table class=tname>
+      <table>
+        <li class=type></li>
+        <ul class utype>
+
+        </ul>
+        <li class=base></li>
+        <table class=tbase>
+          <table>
+  </ul>
+</body>
+
+<script>
+
+  // WEB BROWSERS
+
+  fetch("https://pokedex-dss-api.herokuapp.com/pokedex/1")
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+
+      bigKeys = Object.keys(data)
+      bigKeys.map(item => {
+        document.querySelector(`.${item}`).innerHTML = `${item}`
+      })
+
+      // const id = document.querySelector("h1")
+      // id.innerHTML = `${data.id}`
+
+      // const lid = document.querySelector(".id")
+      // lid.innerHTML = `The id is ${data.id}`
+      // const lname = document.querySelector(".name")
+      // lname.innerHTML = `${data.name}`
+      // const ltype = document.querySelector(".type")
+      // ltype.innerHTML = `${data.type}`
+      // const lbase = document.querySelector(".base")
+      // lbase.innerHTML = `${data.base}`
+
+      // const lname = document.querySelector(".name")
+      // lname.innerHTML = `${data.name}`
+      // namekeys = Object.keys(data.name);
+      // const name = document.querySelector(".tname")
+      // createTable(data.name, name)
+
+      // types = data.type;
+      // const typ = document.querySelector(".utype")
+      // typ.innerHTML =''
+      // types.map(item => {
+      //   typ.innerHTML += `<li> ${item} </li>`
+      // })
+
+      // basekeys = Object.keys(data.base);
+      // const base = document.querySelector(".tbase")
+      // createTable(data.base, name)
+
+
+
+      // const target = document.querySelector("ul")
+      // target.innerHTML = data.map(u => `<li>${u.first_name}</li>`)
+    })
+
+  const createTable = (data, name) => {
+    name.innerHTML = `<tr>`
+    namekeys.map(key => {
+      name.innerHTML += `<td> ${key} </td>`
+    }
+    )
+    name.innerHTML += `</tr>`
+    name.innerHTML += `<tr>`
+    namekeys.map(key => {
+      name.innerHTML += `<th> ${data[key]} </th>`
+    }
+    )
+    name.innerHTML += `</tr>`
+    return name.innerHTML;
+  }
+
+
+</script>
+
+</html>

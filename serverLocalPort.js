@@ -4,7 +4,7 @@ import cors from 'cors';
 import pokedata from './data/pokedex.json' assert { type: 'json' };
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 // app.use(cors());
 console.log(pokedata.length);
